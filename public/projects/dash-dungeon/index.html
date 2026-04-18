@@ -1,0 +1,201 @@
+<section class="dd-page">
+<style>
+#project-content { padding: 0; max-width: 100%; background: none; }
+
+/* ── Colonne de lecture ── */
+.dd-hero {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 5.5rem 2rem 4rem;
+  border-bottom: 1px solid rgba(200,212,234,0.08);
+}
+
+.dd-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.8rem;
+}
+
+.dd-badge {
+  font-size: 0.60rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  border: 1px solid rgba(200,212,234,0.18);
+  padding: 0.28rem 0.8rem;
+  border-radius: 20px;
+  opacity: 0.6;
+}
+
+.dd-hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 900;
+  color: var(--text,#f0ecf8);
+  letter-spacing: -2px;
+  line-height: 1.02;
+  margin: 0 0 0.6rem;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.dd-hero-sub {
+  font-size: 0.68rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  opacity: 0.38;
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+.dd-ctas {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.dd-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: 4px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--primary,#81021f);
+  color: #fff;
+  border: 1px solid var(--primary,#81021f);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.dd-cta:hover {
+  background: var(--primary-hover,#a1153f);
+  border-color: var(--primary-hover,#a1153f);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(129,2,31,0.35);
+  color: #fff;
+}
+
+.dd-cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: 4px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--moon-silver,#c8d4ea);
+  border: 1px solid rgba(200,212,234,0.25);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.dd-cta-ghost:hover {
+  border-color: rgba(200,212,234,0.55);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ── Sections texte ── */
+.dd-section {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+}
+
+.dd-label {
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted,#5a5470);
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.4rem;
+}
+.dd-label::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  display: block;
+  flex-shrink: 0;
+}
+
+.dd-section p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-secondary,#b8b0cc);
+  margin: 0 0 1.1rem;
+}
+.dd-section p:last-child { margin-bottom: 0; }
+
+/* ── Carousel wrapper ── */
+.dd-carousel-wrap {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem 2.5rem;
+}
+
+.dd-carousel-wrap .carousel {
+  margin: 0;
+  max-width: 100%;
+}
+
+/* ── Séparateur ── */
+.dd-sep {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  border-top: 1px solid rgba(200,212,234,0.08);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .dd-hero { padding: 3.5rem 1.5rem 3rem; }
+  .dd-section { padding: 2.5rem 1.5rem; }
+  .dd-carousel-wrap { padding: 0 1.5rem 1.8rem; }
+}
+</style>
+
+<!-- ══ HERO ══ -->
+<div class="dd-hero">
+  <div class="dd-badges">
+    <span class="dd-badge">2ème année</span>
+    <span class="dd-badge">Dungeon Crawler</span>
+    <span class="dd-badge">Level Design</span>
+    <span class="dd-badge">Projet d'équipe</span>
+  </div>
+  <h1>Dash Dungeon</h1>
+  <span class="dd-hero-sub">Level Design · Conception sur papier</span>
+  <div class="dd-ctas">
+    <a class="dd-cta-ghost" href="projects/dash-dungeon/DashDungeon.zip" download>
+      Télécharger le jeu ↓
+    </a>
+  </div>
+</div>
+
+<!-- ══ MON RÔLE ══ -->
+<div class="dd-section">
+  <p class="dd-label">Mon rôle</p>
+  <p>Mon rôle dans ce projet a été de designer les niveaux sur papier afin que les développeurs puissent les implémenter eux-mêmes.</p>
+  <p>J'ai pris en considération leurs contraintes (taille des niveaux, positionnement des entrées et sorties…) et les différentes mécaniques qu'ils avaient créées (piques, téléporteurs…) et les ai progressivement ajoutés afin de créer une courbe de difficulté fluide.</p>
+</div>
+
+<!-- ══ CAROUSELS ══ -->
+<div class="dd-carousel-wrap">
+  <div id="carousel-paper-levels"></div>
+</div>
+
+<div class="dd-carousel-wrap">
+  <div id="carousel-levels"></div>
+</div>
+
+</section>

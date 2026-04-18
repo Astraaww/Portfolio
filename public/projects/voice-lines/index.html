@@ -1,0 +1,328 @@
+<section class="vl-page">
+<style>
+#project-content { padding: 0; max-width: 100%; background: none; }
+
+/* ── Colonne de lecture ── */
+.vl-hero {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 5.5rem 2rem 4rem;
+  border-bottom: 1px solid rgba(200,212,234,0.08);
+}
+
+.vl-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.8rem;
+}
+
+.vl-badge {
+  font-size: 0.60rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  border: 1px solid rgba(200,212,234,0.18);
+  padding: 0.28rem 0.8rem;
+  border-radius: 20px;
+  opacity: 0.6;
+}
+
+.vl-hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 900;
+  color: var(--text,#f0ecf8);
+  letter-spacing: -2px;
+  line-height: 1.02;
+  margin: 0 0 0.6rem;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.vl-hero-sub {
+  font-size: 0.68rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  opacity: 0.38;
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+.vl-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: 4px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--primary,#81021f);
+  color: #fff;
+  border: 1px solid var(--primary,#81021f);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.vl-cta:hover {
+  background: var(--primary-hover,#a1153f);
+  border-color: var(--primary-hover,#a1153f);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(129,2,31,0.35);
+  color: #fff;
+}
+
+/* ── Sections texte ── */
+.vl-section {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+}
+
+.vl-label {
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted,#5a5470);
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.4rem;
+}
+.vl-label::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  display: block;
+  flex-shrink: 0;
+}
+
+.vl-section h3 {
+  font-size: 0.60rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted,#5a5470);
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 2.5rem 0 0.9rem;
+}
+.vl-section h3::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  display: block;
+  flex-shrink: 0;
+}
+
+.vl-section p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-secondary,#b8b0cc);
+  margin: 0 0 1.1rem;
+}
+.vl-section p:last-child { margin-bottom: 0; }
+
+/* ── Progression narrative ── */
+.vl-phases {
+  list-style: none;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.vl-phases li {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0 0.6rem;
+  align-items: start;
+}
+
+.vl-phase-label {
+  font-size: 0.55rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  opacity: 0.35;
+  padding-top: 0.25rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.vl-phase-body {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-secondary,#b8b0cc);
+}
+.vl-phase-body strong {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  opacity: 0.6;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+/* ── Liste simple ── */
+.vl-list {
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.vl-list li {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary,#b8b0cc);
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  padding: 0.3rem 0;
+  position: relative;
+}
+.vl-list li::before {
+  content: '·';
+  color: var(--moon-silver,#c8d4ea);
+  opacity: 0.45;
+  flex-shrink: 0;
+  font-size: 1.6rem;
+  line-height: 0.9;
+}
+
+/* ── Pull quote ── */
+.vl-quote {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+}
+.vl-quote blockquote {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-style: italic;
+  color: var(--moon-silver,#c8d4ea);
+  line-height: 1.6;
+  margin: 0;
+  padding: 1.5rem 0 1.5rem 2rem;
+  border-left: 2px solid rgba(200,212,234,0.2);
+  opacity: 0.82;
+}
+
+/* ── Séparateur ── */
+.vl-sep {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  border-top: 1px solid rgba(200,212,234,0.08);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .vl-hero { padding: 3.5rem 1.5rem 3rem; }
+  .vl-section { padding: 2.5rem 1.5rem; }
+  .vl-quote { padding: 0 1.5rem 2.5rem; }
+  .vl-phases li { grid-template-columns: 1fr; gap: 0.2rem; }
+  .vl-phase-label { opacity: 0.5; }
+}
+</style>
+
+<!-- ══ HERO ══ -->
+<div class="vl-hero">
+  <div class="vl-badges">
+    <span class="vl-badge">3ème année</span>
+    <span class="vl-badge">Projet de fin d'études</span>
+    <span class="vl-badge">Écriture narrative</span>
+    <span class="vl-badge">The Good Company</span>
+  </div>
+  <h1>Voice Lines</h1>
+  <span class="vl-hero-sub">Écriture des voice lines de The Good Companion</span>
+  <a class="vl-cta" href="https://docs.google.com/document/d/1ggXzPwxfXNmVfxnj13zduZUirK0K2cb4vytnDpDgcpA/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+    Voir le document →
+  </a>
+</div>
+
+<!-- ══ CONTEXTE ══ -->
+<div class="vl-section">
+  <p class="vl-label">Contexte</p>
+  <p>Imaginez que vous travailliez dans une entreprise mondiale des années 80. Vous travaillez en openspace mais vous êtes coincés. Vous avez l'impression que les jours vous échappent, ils se ressemblent tous au point où vous ne savez plus où vous êtes, ce que vous faites, pourquoi vous le faites, ni même quel jour on est.</p>
+  <p>Eh bien bienvenue dans The Good Company.</p>
+  <p>Dans ce jeu de parcours à la première personne, le joueur, coincé dans une boucle temporelle, tente de s'échapper de son entreprise. L'espace est déformé, trop grand, comme un immense complexe aux dimensions intérieures incohérentes.</p>
+</div>
+
+<div class="vl-sep"></div>
+
+<!-- ══ PERSONNAGE ══ -->
+<div class="vl-section">
+  <p class="vl-label">The Good Companion</p>
+
+  <h3>Qui est-il ?</h3>
+  <p>Dans The Good Company, le joueur incarne John Doe, un employé d'une mégacorps hypercapitaliste qui utilise ses employés et leur temps comme une ressource à sa disposition afin de produire toujours plus.</p>
+
+  <h3>Son rôle</h3>
+  <p>Le rôle de The Good Companion est de personnifier le système — donner une voix à quelque chose d'abstrait pour permettre au joueur de ressentir le propos, pas juste de le comprendre.</p>
+</div>
+
+<div class="vl-sep"></div>
+
+<!-- ══ ÉCRITURE ══ -->
+<div class="vl-section">
+  <p class="vl-label">Écriture des Voice Lines</p>
+  <p>The Good Companion ne devait évidemment pas lancer des phrases corporate au hasard. Étant au centre de l'avancée narrative, il devait suivre une structure claire, avec une progression marquée — à l'image de GLaDOS dans Portal.</p>
+
+  <ul class="vl-phases">
+    <li>
+      <span class="vl-phase-label">Tutoriel</span>
+      <div class="vl-phase-body">
+        <strong>Choc initial</strong>
+        Des phrases fortes, évocatrices, presque choquantes à ce stade du jeu, afin d'introduire immédiatement le contexte et de poser un malaise initial.
+      </div>
+    </li>
+    <li>
+      <span class="vl-phase-label">Phase 1</span>
+      <div class="vl-phase-body">
+        <strong>Normalisation</strong>
+        Un discours plus doux, visant à faire accepter le cadre dans lequel on évolue et à le présenter comme normal. Le temps est un bien commun. Le besoin de temps personnel est nié. La réussite professionnelle est présentée comme essentielle au bonheur. Ce cadre répétitif et chronophage est présenté comme sain et nécessaire.
+      </div>
+    </li>
+    <li>
+      <span class="vl-phase-label">Phase 2</span>
+      <div class="vl-phase-body">
+        <strong>Culpabilisation</strong>
+        Le ton évolue vers la culpabilisation de ceux qui doutent ou qui se sentent mal dans ce système.
+      </div>
+    </li>
+  </ul>
+
+  <p style="margin-top:2rem">Chaque intervention du personnage remplit ainsi une fonction précise dans la transmission du propos, participant à une progression idéologique autant que narrative.</p>
+</div>
+
+<div class="vl-sep"></div>
+
+<!-- ══ TON & RÈGLES ══ -->
+<div class="vl-section">
+  <p class="vl-label">Ton & Règles d'écriture</p>
+
+  <h3>Le ton</h3>
+  <p>Comment The Good Companion s'adressait-il au joueur, et pourquoi ? Plusieurs contraintes narratives nous ont poussés à des choix de design, pour finalement prendre la forme suivante :</p>
+  <ul class="vl-list">
+    <li>Les Voice Lines sont dépersonnalisées : elles s'adressent à l'ensemble du personnel et sont préenregistrées. Le joueur n'est jamais directement visé.</li>
+    <li>The Good Companion n'est pas agressif, sarcastique ou piquant. Ce qu'il dit est toujours exprimé comme une vérité établie.</li>
+  </ul>
+
+  <h3>Contrainte technique</h3>
+  <p>Si The Good Companion parle pendant que le joueur court, ce dernier sera parasité et n'entendra pas correctement ce qui est dit. Pour pallier cela, il a été défini que les Voice Lines ne seraient transmises qu'au reset de la boucle temporelle, lorsque le joueur peut accorder toute son attention à ce qui est dit.</p>
+  <p>Et si jamais une exception devait être faite, les Voice Lines seraient diffusées dans des moments où le challenge mécanique est faible, afin que le joueur puisse se concentrer sur le discours.</p>
+</div>
+
+</section>

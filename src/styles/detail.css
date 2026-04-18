@@ -1,0 +1,158 @@
+/* ===================== BASE ===================== */
+.project-detail {
+  padding: 0 0 6rem;
+}
+
+.project-detail .container {
+  max-width: 860px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+/* ===================== TYPOGRAPHY ===================== */
+.project-detail h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -1px;
+  line-height: 1.05;
+  background: none;
+  -webkit-text-fill-color: initial;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+}
+
+.project-detail h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  margin-top: 3.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--moon-silver);
+  position: relative;
+  padding-bottom: 0.8rem;
+  background: none;
+  -webkit-text-fill-color: initial;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+}
+
+.project-detail h2::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 1px;
+  background: rgba(200, 212, 234, 0.35);
+}
+
+.project-detail h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--moon-silver);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  opacity: 0.7;
+}
+
+.project-detail p {
+  line-height: 1.9;
+  margin-bottom: 1.4rem;
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+}
+
+.project-detail a {
+  color: var(--moon-silver);
+  border-bottom: 1px solid rgba(200, 212, 234, 0.25);
+  transition: border-color 0.2s ease;
+}
+
+.project-detail a:hover {
+  border-color: rgba(200, 212, 234, 0.7);
+}
+
+/* ===================== PROJECT IMAGES ===================== */
+.project-image {
+  margin: 4rem 0;
+}
+
+.project-image img {
+  width: 100%;
+  max-width: 720px;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(200, 212, 234, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-image img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* ===================== CAROUSEL ===================== */
+.carousel {
+  position: relative;
+  max-width: 800px;
+  margin: 40px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-image {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid rgba(200, 212, 234, 0.08);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-btn {
+  position: absolute;
+  background: rgba(7, 7, 15, 0.8);
+  border: 1px solid rgba(200, 212, 234, 0.15);
+  color: var(--moon-silver);
+  font-size: 1.4rem;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.3s;
+  user-select: none;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background: rgba(200, 212, 234, 0.1);
+}
+
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .project-detail {
+    padding: 0 0 4rem;
+  }
+
+  .project-detail h1 {
+    font-size: 2.2rem;
+  }
+
+  .project-detail h2 {
+    font-size: 1.3rem;
+  }
+
+  .project-detail p {
+    font-size: 1rem;
+  }
+}

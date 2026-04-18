@@ -1,0 +1,672 @@
+/* ===================== LAYOUT ===================== */
+html {
+  scroll-behavior: smooth;
+}
+
+.section {
+  padding: 6rem 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.container p {
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.container > h2 {
+  margin-top: 8rem;
+}
+
+/* ===================== SECTION HEADINGS ===================== */
+.section h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: var(--moon-silver);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--moon-silver) 0%, transparent 100%);
+  opacity: 0.4;
+}
+
+/* ===================== ABOUT ===================== */
+#about {
+  position: relative;
+}
+
+#about::before {
+  content: '✦';
+  position: absolute;
+  top: 7rem;
+  right: 8%;
+  font-size: 1.2rem;
+  color: rgba(200, 212, 234, 0.10);
+  pointer-events: none;
+}
+
+#about p {
+  max-width: 780px;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+}
+
+#about p:first-of-type {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--moon-silver);
+  line-height: 1.85;
+  border-left: 1px solid rgba(200, 212, 234, 0.2);
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* ===================== PROJECTS ===================== */
+.section-description {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  line-height: 1.7;
+  max-width: 700px;
+}
+
+/* --- Editorial numbered list --- */
+.project-list-item {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(200, 212, 234, 0.07);
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.project-list-item:last-child {
+  border-bottom: 1px solid rgba(200, 212, 234, 0.07);
+}
+
+.project-list-item:hover {
+  background: rgba(200, 212, 234, 0.03);
+}
+
+/* Row (number + text + meta + arrow) */
+.pli-main {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.8rem 1rem;
+  transition: padding-left 0.3s ease;
+}
+
+.project-list-item:hover .pli-main {
+  padding-left: 1.8rem;
+}
+
+/* Large muted number */
+.pli-number {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--moon-silver);
+  opacity: 0.10;
+  line-height: 1;
+  min-width: 3.5rem;
+  text-align: right;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+.project-list-item:hover .pli-number {
+  opacity: 0.35;
+}
+
+/* Title + description */
+.pli-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.pli-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+  transition: color 0.3s ease;
+}
+
+.project-list-item:hover .pli-title {
+  color: var(--moon-silver);
+}
+
+.pli-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.project-list-item:hover .pli-desc {
+  color: var(--text-secondary);
+}
+
+/* Meta tags stacked */
+.pli-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
+
+.pli-meta span {
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0.7;
+  white-space: nowrap;
+}
+
+/* Image accordion — expands below the row on hover */
+.pli-img {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.45s ease;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.project-list-item:hover .pli-img {
+  max-height: 500px;
+  padding: 0 1rem 1.2rem;
+}
+
+.pli-img img {
+  width: auto;
+  max-width: 55%;
+  height: auto;
+  max-height: 320px;
+  border-radius: 6px;
+  display: block;
+  border: 1px solid rgba(200, 212, 234, 0.10);
+}
+
+/* Arrow revealed on hover */
+.pli-arrow {
+  font-size: 1rem;
+  color: var(--moon-silver);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.project-list-item:hover .pli-arrow {
+  opacity: 0.55;
+  transform: translateX(0);
+}
+
+/* ===================== HERO ===================== */
+.intro-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 2rem 8rem;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Moon glow — top right */
+.intro-section::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle at 55% 45%,
+    rgba(200, 212, 234, 0.08) 0%,
+    rgba(80, 50, 130, 0.04) 40%,
+    transparent 65%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Red nebula — bottom left */
+.intro-section::after {
+  content: '';
+  position: absolute;
+  bottom: -200px;
+  left: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle,
+    rgba(129, 2, 31, 0.09) 0%,
+    transparent 65%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Star field */
+.stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1.5px 1.5px at 7% 11%, rgba(255,255,248,0.85) 0%, transparent 0%),
+    radial-gradient(1px 1px at 13% 37%, rgba(255,255,248,0.65) 0%, transparent 0%),
+    radial-gradient(2px 2px at 20% 64%, rgba(255,255,248,0.70) 0%, transparent 0%),
+    radial-gradient(1px 1px at 26% 19%, rgba(255,255,248,0.60) 0%, transparent 0%),
+    radial-gradient(1.5px 1.5px at 32% 54%, rgba(255,255,248,0.80) 0%, transparent 0%),
+    radial-gradient(1px 1px at 38% 8%, rgba(255,255,248,0.70) 0%, transparent 0%),
+    radial-gradient(1px 1px at 44% 81%, rgba(255,255,248,0.55) 0%, transparent 0%),
+    radial-gradient(1.5px 1.5px at 50% 44%, rgba(255,255,248,0.75) 0%, transparent 0%),
+    radial-gradient(1px 1px at 56% 23%, rgba(255,255,248,0.65) 0%, transparent 0%),
+    radial-gradient(2px 2px at 62% 67%, rgba(255,255,248,0.85) 0%, transparent 0%),
+    radial-gradient(1px 1px at 69% 34%, rgba(255,255,248,0.55) 0%, transparent 0%),
+    radial-gradient(1.5px 1.5px at 75% 86%, rgba(255,255,248,0.75) 0%, transparent 0%),
+    radial-gradient(1px 1px at 81% 51%, rgba(255,255,248,0.65) 0%, transparent 0%),
+    radial-gradient(2px 2px at 87% 14%, rgba(255,255,248,0.80) 0%, transparent 0%),
+    radial-gradient(1px 1px at 93% 72%, rgba(255,255,248,0.55) 0%, transparent 0%),
+    radial-gradient(1px 1px at 3% 89%, rgba(255,255,248,0.70) 0%, transparent 0%),
+    radial-gradient(1.5px 1.5px at 16% 74%, rgba(255,255,248,0.60) 0%, transparent 0%),
+    radial-gradient(1px 1px at 29% 88%, rgba(255,255,248,0.55) 0%, transparent 0%),
+    radial-gradient(1px 1px at 47% 94%, rgba(255,255,248,0.80) 0%, transparent 0%),
+    radial-gradient(2px 2px at 59% 6%, rgba(255,255,248,0.70) 0%, transparent 0%),
+    radial-gradient(1px 1px at 73% 59%, rgba(255,255,248,0.60) 0%, transparent 0%),
+    radial-gradient(1.5px 1.5px at 84% 27%, rgba(255,255,248,0.65) 0%, transparent 0%),
+    radial-gradient(1px 1px at 95% 43%, rgba(255,255,248,0.75) 0%, transparent 0%),
+    radial-gradient(1px 1px at 10% 51%, rgba(255,255,248,0.65) 0%, transparent 0%),
+    radial-gradient(2px 2px at 23% 32%, rgba(255,255,248,0.55) 0%, transparent 0%),
+    radial-gradient(1px 1px at 41% 70%, rgba(255,255,248,0.70) 0%, transparent 0%),
+    radial-gradient(1.5px 1.5px at 66% 78%, rgba(255,255,248,0.80) 0%, transparent 0%),
+    radial-gradient(1px 1px at 78% 17%, rgba(255,255,248,0.65) 0%, transparent 0%),
+    radial-gradient(1px 1px at 90% 90%, rgba(255,255,248,0.60) 0%, transparent 0%),
+    radial-gradient(2px 2px at 98% 28%, rgba(255,255,248,0.50) 0%, transparent 0%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Moon circle decoration */
+.moon-deco {
+  position: absolute;
+  top: 5%;
+  right: 4%;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 212, 234, 0.09);
+  box-shadow:
+    0 0 80px rgba(200, 212, 234, 0.06),
+    inset 0 0 50px rgba(200, 212, 234, 0.03);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.moon-deco::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(200, 212, 234, 0.06);
+}
+
+
+/* ===================== INTRO CONTAINER ===================== */
+.intro-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-text {
+  flex: 1;
+}
+
+.intro-eyebrow {
+  display: block;
+  font-size: 0.70rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--moon-silver);
+  margin-bottom: 1.4rem;
+  opacity: 0.45;
+}
+
+.intro-text h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 5rem;
+  line-height: 1.0;
+  margin-bottom: 1.2rem;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -2px;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.intro-text .role {
+  font-size: 1rem;
+  color: var(--moon-silver);
+  font-weight: 400;
+  margin-bottom: 1.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: none;
+  -webkit-text-fill-color: initial;
+  display: inline-block;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(200, 212, 234, 0.25);
+}
+
+.intro-text > p:not(.role) {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+/* ===================== PROFILE IMAGE ===================== */
+.intro-image {
+  flex: 0 0 300px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  border: 1.5px solid rgba(200, 212, 234, 0.22);
+  box-shadow:
+    0 0 0 10px rgba(200, 212, 234, 0.04),
+    0 0 0 22px rgba(200, 212, 234, 0.02),
+    0 0 80px rgba(200, 212, 234, 0.10),
+    0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.intro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===================== BUTTONS ===================== */
+.intro-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.8rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+  border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(129, 2, 31, 0.35);
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--moon-silver);
+  border: 1px solid rgba(200, 212, 234, 0.28);
+}
+
+.btn-outline:hover {
+  background: rgba(200, 212, 234, 0.07);
+  border-color: rgba(200, 212, 234, 0.55);
+  transform: translateY(-2px);
+  color: var(--moon-silver);
+}
+
+/* ===================== SCROLL INDICATOR ===================== */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  animation: fadeInUp 1s ease 1.2s both;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.scroll-arrow {
+  width: 14px;
+  height: 14px;
+  border-right: 1px solid var(--muted);
+  border-bottom: 1px solid var(--muted);
+  transform: rotate(45deg);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0) rotate(45deg);   opacity: 0.4; }
+  50%       { transform: translateY(5px) rotate(45deg); opacity: 0.9; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ===================== SKILL TAGS ===================== */
+.skill-tag {
+  background: rgba(200, 212, 234, 0.07);
+  border: 1px solid rgba(200, 212, 234, 0.18);
+  color: var(--moon-silver);
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-weight: 400;
+  font-size: 0.82rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(200, 212, 234, 0.13);
+  border-color: rgba(200, 212, 234, 0.38);
+  transform: translateY(-2px);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1024px) {
+  .intro-container {
+    gap: 3rem;
+  }
+
+  .intro-text h1 {
+    font-size: 4rem;
+  }
+
+  .pli-meta {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+    padding-top: 2rem;
+  }
+
+  .intro-image {
+    width: 230px;
+    height: 230px;
+    flex: none;
+  }
+
+  .intro-text {
+    margin-top: 0;
+  }
+
+  .intro-text h1 {
+    font-size: 3.2rem;
+    letter-spacing: -1px;
+  }
+
+  .intro-text .role {
+    font-size: 0.75rem;
+  }
+
+  .intro-text > p:not(.role) {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  .intro-cta {
+    justify-content: center;
+  }
+
+  .pli-number {
+    font-size: 2rem;
+    min-width: 2.5rem;
+  }
+
+
+  .section {
+    padding: 4rem 1rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-section {
+    padding: 3rem 1rem 6rem;
+  }
+
+  .intro-container {
+    padding-top: 1rem;
+  }
+
+  .intro-text h1 {
+    font-size: 2.6rem;
+  }
+
+  .intro-text .role {
+    font-size: 0.7rem;
+  }
+
+  .intro-text > p:not(.role) {
+    font-size: 0.95rem;
+  }
+
+  .intro-image {
+    width: 190px;
+    height: 190px;
+  }
+
+  .moon-deco {
+    width: 80px;
+    height: 80px;
+    top: 2%;
+    right: 2%;
+  }
+
+  .section {
+    padding: 2.5rem 0.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-description {
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .project-list-item {
+    gap: 1rem;
+    padding: 1.4rem 0.5rem;
+  }
+
+  .pli-number {
+    font-size: 1.8rem;
+    min-width: 2rem;
+  }
+
+  .pli-title {
+    font-size: 1rem;
+  }
+
+  .pli-img {
+    display: none;
+  }
+
+  .pli-arrow {
+    display: none;
+  }
+}

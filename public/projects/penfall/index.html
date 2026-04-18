@@ -1,0 +1,382 @@
+<section class="pf-page">
+<style>
+#project-content { padding: 0; max-width: 100%; background: none; }
+
+/* ── Colonne de lecture ── */
+.pf-hero {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 5.5rem 2rem 4rem;
+  border-bottom: 1px solid rgba(200,212,234,0.08);
+}
+
+.pf-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.8rem;
+}
+
+.pf-badge {
+  font-size: 0.60rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  border: 1px solid rgba(200,212,234,0.18);
+  padding: 0.28rem 0.8rem;
+  border-radius: 20px;
+  opacity: 0.6;
+}
+
+.pf-hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 900;
+  color: var(--text,#f0ecf8);
+  letter-spacing: -2px;
+  line-height: 1.02;
+  margin: 0 0 0.6rem;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.pf-hero-sub {
+  font-size: 0.68rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  opacity: 0.38;
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+.pf-ctas {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.pf-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: 4px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--primary,#81021f);
+  color: #fff;
+  border: 1px solid var(--primary,#81021f);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.pf-cta:hover {
+  background: var(--primary-hover,#a1153f);
+  border-color: var(--primary-hover,#a1153f);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(129,2,31,0.35);
+  color: #fff;
+}
+
+.pf-cta-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: 4px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--moon-silver,#c8d4ea);
+  border: 1px solid rgba(200,212,234,0.25);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.pf-cta-ghost:hover {
+  border-color: rgba(200,212,234,0.55);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ── Sections texte ── */
+.pf-section {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+}
+
+.pf-label {
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted,#5a5470);
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.4rem;
+}
+.pf-label::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  display: block;
+  flex-shrink: 0;
+}
+
+.pf-section h3 {
+  font-size: 0.60rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted,#5a5470);
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 2.5rem 0 0.9rem;
+}
+.pf-section h3::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  display: block;
+  flex-shrink: 0;
+}
+
+.pf-section p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-secondary,#b8b0cc);
+  margin: 0 0 1.1rem;
+}
+.pf-section p:last-child { margin-bottom: 0; }
+
+/* ── Étapes numérotées ── */
+.pf-steps {
+  list-style: none;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.pf-steps li {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0 0.6rem;
+  align-items: start;
+}
+
+.pf-step-num {
+  font-size: 0.55rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  opacity: 0.35;
+  padding-top: 0.25rem;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.pf-step-body {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-secondary,#b8b0cc);
+}
+.pf-step-body strong {
+  display: block;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  opacity: 0.6;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+/* ── Liste simple ── */
+.pf-list {
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.pf-list li {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary,#b8b0cc);
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  padding: 0.3rem 0;
+}
+.pf-list li::before {
+  content: '·';
+  color: var(--moon-silver,#c8d4ea);
+  opacity: 0.45;
+  flex-shrink: 0;
+  font-size: 1.6rem;
+  line-height: 0.9;
+}
+
+/* ── Images ── */
+.pf-img-wrap {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem 1.8rem;
+}
+
+.pf-carousel-wrap {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem 1.8rem;
+}
+
+.pf-carousel-wrap .carousel {
+  margin: 0;
+  max-width: 100%;
+}
+
+.pf-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid rgba(200,212,234,0.09);
+  box-shadow: 0 20px 55px rgba(0,0,0,0.5);
+}
+
+.pf-img-caption {
+  font-size: 0.52rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted,#5a5470);
+  text-align: center;
+  margin-top: 0.7rem;
+  opacity: 0.45;
+}
+
+/* ── Séparateur ── */
+.pf-sep {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  border-top: 1px solid rgba(200,212,234,0.08);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .pf-hero { padding: 3.5rem 1.5rem 3rem; }
+  .pf-section { padding: 2.5rem 1.5rem; }
+  .pf-img-wrap { padding: 0 1.5rem 2rem; }
+  .pf-steps li { grid-template-columns: 1fr; gap: 0.2rem; }
+  .pf-step-num { opacity: 0.5; }
+}
+</style>
+
+<!-- ══ HERO ══ -->
+<div class="pf-hero">
+  <div class="pf-badges">
+    <span class="pf-badge">Godot</span>
+    <span class="pf-badge">2ème année</span>
+    <span class="pf-badge">Platformer 2D</span>
+    <span class="pf-badge">Level Design</span>
+  </div>
+  <h1>Penfall</h1>
+  <span class="pf-hero-sub">System Design · Level Design · Godot</span>
+  <div class="pf-ctas">
+    <a class="pf-cta" href="https://astraaww.itch.io/penfall" target="_blank" rel="noopener noreferrer">
+      Jouer sur Itch.io →
+    </a>
+    <a class="pf-cta-ghost" href="projects/penfall/Penfall.zip" download>
+      Télécharger le jeu ↓
+    </a>
+  </div>
+</div>
+
+<!-- ══ PITCH ══ -->
+<div class="pf-section">
+  <p class="pf-label">Pitch</p>
+  <p>Penfall est un platformer 2D dans lequel l'objectif est d'avancer jusqu'au bout du niveau sans mourir. Le joueur progresse à l'aide de champs gravitationnels — qui le propulsent dans les airs selon une orbite — et de son stylo gravitationnel, grâce auquel il peut se projeter dans la direction souhaitée.</p>
+</div>
+
+<!-- ══ GIF ══ -->
+<div class="pf-img-wrap">
+  <img src="projects/penfall/cover.gif" alt="Penfall — gameplay" />
+</div>
+
+<div class="pf-sep"></div>
+
+<!-- ══ RÔLES ══ -->
+<div class="pf-section">
+  <p class="pf-label">Mes rôles</p>
+  <ul class="pf-list">
+    <li>System Designer</li>
+    <li>Level Designer</li>
+    <li>Implémentation des assets</li>
+    <li>Tutorisation des mécaniques</li>
+  </ul>
+</div>
+
+<div class="pf-sep"></div>
+
+<!-- ══ CONCEPTION ══ -->
+<div class="pf-section">
+  <p class="pf-label">Conception</p>
+  <p>Le Level Design a été un challenge important dans ce projet, car avec le peu de temps dont je disposais pour le créer, il me fallait avancer sans prendre le temps d'itérer. Je m'y suis alors prise de la manière suivante :</p>
+
+  <ul class="pf-steps">
+    <li>
+      <span class="pf-step-num">Étape 1</span>
+      <div class="pf-step-body">
+        <strong>Expérimentations</strong>
+        J'ai commencé par créer des mini gym, dans lesquels je testais diverses situations de jeu, afin de comprendre ce qui était amusant ou non, et ce qui pouvait représenter un véritable challenge.
+      </div>
+    </li>
+    <li>
+      <span class="pf-step-num">Étape 2</span>
+      <div class="pf-step-body">
+        <strong>Analyses</strong>
+        J'ai ensuite analysé des jeux similaires (Bred and Fred notamment), pour observer à quelle fréquence les mêmes types de challenges se répétaient et comment ils étaient rythmés.
+      </div>
+    </li>
+    <li>
+      <span class="pf-step-num">Étape 3</span>
+      <div class="pf-step-body">
+        <strong>Schémas et réalisation</strong>
+        Une fois ces bases posées, j'ai réalisé quelques schémas de motifs, puis j'ai directement construit le level final.
+      </div>
+    </li>
+  </ul>
+</div>
+
+<div class="pf-sep"></div>
+
+<!-- ══ AUTRES CHALLENGES ══ -->
+<div class="pf-section">
+  <p class="pf-label">Autres challenges</p>
+  <p>En parallèle du Level Design, plusieurs défis techniques se sont présentés :</p>
+  <ul class="pf-list">
+    <li>Prise en main d'un nouveau moteur (Godot)</li>
+    <li>Utilisation du tileset</li>
+    <li>Utilisation de l'Animator</li>
+    <li>Trouver des solutions de design pour pallier certains problèmes (ajout d'une map, ajustement de la hauteur de caméra)</li>
+  </ul>
+</div>
+
+<!-- ══ CAROUSEL ══ -->
+<div class="pf-carousel-wrap">
+  <div id="carousel-penfall"></div>
+  <p class="pf-img-caption">Aperçus du jeu</p>
+</div>
+
+</section>

@@ -1,0 +1,160 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(7, 7, 15, 0.82);
+  border-bottom: 1px solid rgba(200, 212, 234, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+}
+
+.nav-container {
+  width: 100%;
+  padding: 1.2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+/* Pill badge logo */
+.nav-logo {
+  font-size: 0.65rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--moon-silver);
+  opacity: 0.65;
+  border: 1px solid rgba(200, 212, 234, 0.18);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  background: rgba(200, 212, 234, 0.04);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  min-width: 0;
+  -webkit-text-fill-color: initial;
+  background-clip: initial;
+  -webkit-background-clip: initial;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  font-size: 0.68rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  position: relative;
+  opacity: 0.75;
+}
+
+.nav-links a:hover {
+  color: var(--moon-silver);
+  opacity: 1;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: rgba(200, 212, 234, 0.35);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-year {
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  color: var(--muted);
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 1.5px;
+  background: rgba(200, 212, 234, 0.5);
+  transition: 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .nav-year {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(7, 7, 15, 0.97);
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+    gap: 1.8rem;
+    display: none;
+    border-bottom: 1px solid rgba(200, 212, 234, 0.07);
+    backdrop-filter: blur(20px);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 0.75rem;
+    padding: 0.3rem 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 1rem;
+  }
+
+  .nav-logo {
+    font-size: 0.6rem;
+    padding: 0.35rem 0.8rem;
+  }
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(9px) translateX(3px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-9px) translateX(3px);
+}

@@ -1,0 +1,44 @@
+#project-content {
+  padding: 0;
+  max-width: 100%;
+  margin: 0;
+  background: none;
+  border-radius: 0;
+}
+
+#project-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: initial;
+  border-radius: 10px;
+  margin-bottom: 0;
+  border: 1px solid rgba(200, 212, 234, 0.10);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+#project-content p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  margin-bottom: 1.4rem;
+}
+
+#project-content .meta {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+#project-content .meta span {
+  background: rgba(200, 212, 234, 0.07);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid rgba(200, 212, 234, 0.15);
+  color: var(--moon-silver);
+  font-size: 0.78rem;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}

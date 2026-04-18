@@ -1,0 +1,275 @@
+<section class="gw-page">
+<style>
+#project-content { padding: 0; max-width: 100%; background: none; }
+
+/* ── Colonne de lecture ── */
+.gw-col {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ══ HERO ══ */
+.gw-hero {
+  padding: 5.5rem 2rem 4rem;
+  max-width: 740px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(200,212,234,0.08);
+  margin-bottom: 0;
+}
+
+.gw-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.8rem;
+}
+
+.gw-badge {
+  font-size: 0.60rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  border: 1px solid rgba(200,212,234,0.18);
+  padding: 0.28rem 0.8rem;
+  border-radius: 20px;
+  opacity: 0.6;
+}
+
+.gw-hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 900;
+  color: var(--text,#f0ecf8);
+  letter-spacing: -2px;
+  line-height: 1.02;
+  margin: 0 0 0.6rem;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.gw-hero-sub {
+  font-size: 0.68rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  opacity: 0.38;
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+.gw-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: 4px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--primary,#81021f);
+  color: #fff;
+  border: 1px solid var(--primary,#81021f);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.gw-cta:hover {
+  background: var(--primary-hover,#a1153f);
+  border-color: var(--primary-hover,#a1153f);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(129,2,31,0.35);
+  color: #fff;
+}
+
+/* ══ SECTIONS TEXTE ══ */
+.gw-section {
+  padding: 3.5rem 2rem;
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+.gw-section + .gw-section {
+  padding-top: 0;
+}
+
+.gw-label {
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted,#5a5470);
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 0.9rem;
+}
+.gw-label::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  display: block;
+}
+
+.gw-section h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--moon-silver,#c8d4ea);
+  margin: 0 0 1rem;
+  line-height: 1.25;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.gw-section h3 {
+  font-size: 0.60rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted,#5a5470);
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 2.5rem 0 0.9rem;
+}
+.gw-section h3::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  display: block;
+}
+
+.gw-section p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-secondary,#b8b0cc);
+  margin: 0 0 1.1rem;
+}
+.gw-section p:last-child { margin-bottom: 0; }
+
+/* ══ PULL QUOTE ══ */
+.gw-quote {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 1rem 2rem 3rem;
+}
+
+.gw-quote blockquote {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  font-style: italic;
+  color: var(--moon-silver,#c8d4ea);
+  line-height: 1.55;
+  margin: 0;
+  padding: 1.5rem 0 1.5rem 2rem;
+  border-left: 2px solid rgba(200,212,234,0.22);
+  opacity: 0.88;
+}
+
+/* ══ IMAGES INTÉGRÉES ══ */
+.gw-img-wrap {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0.5rem 2rem 3rem;
+}
+
+.gw-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid rgba(200,212,234,0.09);
+  box-shadow: 0 20px 55px rgba(0,0,0,0.5);
+}
+
+.gw-img-caption {
+  font-size: 0.60rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted,#5a5470);
+  text-align: center;
+  margin-top: 0.9rem;
+  opacity: 0.45;
+}
+
+/* ══ SÉPARATEUR DE SECTION ══ */
+.gw-sep {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  border-top: 1px solid rgba(200,212,234,0.08);
+}
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 600px) {
+  .gw-hero { padding: 3.5rem 1.5rem 3rem; }
+  .gw-section { padding: 2.5rem 1.5rem; }
+  .gw-img-wrap { padding: 0 1.5rem 2rem; }
+  .gw-quote { padding: 0.5rem 1.5rem 2.5rem; }
+  .gw-quote blockquote { font-size: 1.1rem; padding-left: 1.2rem; }
+}
+</style>
+
+<!-- ══ HERO ══ -->
+<div class="gw-hero">
+  <div class="gw-badges">
+    <span class="gw-badge">Twine</span>
+    <span class="gw-badge">2ème année</span>
+    <span class="gw-badge">17h</span>
+    <span class="gw-badge">Jeu textuel</span>
+  </div>
+  <h1>Le Game&#8209;Writter</h1>
+  <span class="gw-hero-sub">Écriture interactive</span>
+  <a class="gw-cta" href="projects/game-writter/twine-game.html" target="_blank" rel="noopener noreferrer">
+    Jouer au jeu →
+  </a>
+</div>
+
+<!-- ══ CONTEXTE ══ -->
+<div class="gw-section">
+  <p class="gw-label">Contexte</p>
+  <p>Le Game-Writter est un jeu textuel à choix réalisé sur Twine, sur le thème de l'entretien d'embauche. L'enjeu était de réussir à créer un core gameplay en utilisant seulement du texte, afin d'en exploiter toutes les spécificités.</p>
+</div>
+
+<!-- ══ PITCH ══ -->
+<div class="gw-section" style="padding-top:0">
+  <p class="gw-label">Pitch narratif</p>
+  <p>Vous y incarnez Archibald, qui ce matin-là doit se rendre à un entretien d'embauche pour être embauché dans le studio de ses rêves en tant que Game-Writter. Pour qu'il y parvienne, le scénariste a minutieusement planifié sa journée, communiquant au joueur ce qu'il doit faire pour parvenir au bout du jeu.</p>
+</div>
+
+<!-- ══ GIF 1 ══ -->
+<div class="gw-img-wrap">
+  <img src="projects/game-writter/images/img1.gif" alt="Extrait de gameplay" />
+  <p class="gw-img-caption">Extrait de gameplay</p>
+</div>
+
+<div class="gw-sep"></div>
+
+<!-- ══ DÉMARCHE ══ -->
+<div class="gw-section">
+  <p class="gw-label">Démarche</p>
+
+  <h3>Inspiration</h3>
+  <p>Mon jeu s'inspire très largement de The Stanley Parable, et plus précisément de son rapport entre le joueur et un narrateur directif.</p>
+  <p>Ce projet a été mon explorant la notion de narrative design. Il m'a permis de prendre conscience des difficultés liées à l'alignement entre gameplay et propos. Cette expérience a été déterminante dans ma manière d'aborder mes projets suivants.</p>
+
+  <h3>Le texte comme outil narratif</h3>
+  <p>Dans ce jeu, le texte ne sert pas uniquement à transmettre une information : il devient un véritable outil narratif.</p>
+</div>
+
+<!-- ══ GIF 2 ══ -->
+<div class="gw-img-wrap">
+  <img src="projects/game-writter/images/img2.gif" alt="Typographie du narrateur" />
+  <p class="gw-img-caption">Typographie du narrateur</p>
+</div>
+
+<!-- ══ TEXTE FINAL ══ -->
+<div class="gw-section" style="padding-top:1rem">
+  <p>J'utilise différentes typographies pour incarner la voix du narrateur. Lorsqu'il s'adresse directement au joueur, la police par défaut de Twine est utilisée. Lorsqu'il décrit le déroulement des événements, j'emploie une police de type Courier, traditionnellement associée à l'écriture scénaristique, afin de créer une distance et de matérialiser le récit.</p>
+  <p>La mise en forme du texte traduit également l'état mental du narrateur. Certains mots peuvent être soulignés pour insister sur une idée, modifiés en taille ou en couleur pour suggérer une émotion, voire altérés dans leur comportement (tremblements, orientation…) pour refléter une instabilité intérieure.</p>
+</div>
+
+</section>

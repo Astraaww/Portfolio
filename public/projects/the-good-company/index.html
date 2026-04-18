@@ -1,0 +1,285 @@
+<section class="tgc-page">
+<style>
+#project-content { padding: 0; max-width: 100%; background: none; }
+
+/* ── Colonne de lecture ── */
+.tgc-hero {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 5.5rem 2rem 4rem;
+  border-bottom: 1px solid rgba(200,212,234,0.08);
+}
+
+.tgc-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.8rem;
+}
+
+.tgc-badge {
+  font-size: 0.60rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  border: 1px solid rgba(200,212,234,0.18);
+  padding: 0.28rem 0.8rem;
+  border-radius: 20px;
+  opacity: 0.6;
+}
+
+.tgc-hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 900;
+  color: var(--text,#f0ecf8);
+  letter-spacing: -2px;
+  line-height: 1.02;
+  margin: 0 0 0.6rem;
+  background: none;
+  -webkit-text-fill-color: initial;
+}
+
+.tgc-hero-sub {
+  font-size: 0.68rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--moon-silver,#c8d4ea);
+  opacity: 0.38;
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+.tgc-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.8rem;
+  border-radius: 4px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--primary,#81021f);
+  color: #fff;
+  border: 1px solid var(--primary,#81021f);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.tgc-cta:hover {
+  background: var(--primary-hover,#a1153f);
+  border-color: var(--primary-hover,#a1153f);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(129,2,31,0.35);
+  color: #fff;
+}
+
+/* ── Sections texte ── */
+.tgc-section {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem;
+}
+
+.tgc-label {
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted,#5a5470);
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.4rem;
+}
+.tgc-label::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  display: block;
+  flex-shrink: 0;
+}
+
+.tgc-section h3 {
+  font-size: 0.60rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted,#5a5470);
+  opacity: 0.65;
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 2.5rem 0 0.9rem;
+}
+.tgc-section h3::before {
+  content: '';
+  width: 20px;
+  height: 1px;
+  background: currentColor;
+  display: block;
+  flex-shrink: 0;
+}
+
+.tgc-section p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-secondary,#b8b0cc);
+  margin: 0 0 1.1rem;
+}
+.tgc-section p:last-child { margin-bottom: 0; }
+
+/* ── Liste stylisée ── */
+.tgc-list {
+  list-style: none;
+  margin: 1.2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tgc-list li {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary,#b8b0cc);
+  display: flex;
+  align-items: baseline;
+  gap: 0.9rem;
+  padding: 0.3rem 0;
+}
+
+.tgc-list li::before {
+  content: '—';
+  color: var(--moon-silver,#c8d4ea);
+  opacity: 0.3;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+}
+
+/* ── Séparateur ── */
+.tgc-sep {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  border-top: 1px solid rgba(200,212,234,0.08);
+}
+
+/* ── Images ── */
+.tgc-img-wrap {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+}
+
+.tgc-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid rgba(200,212,234,0.09);
+  box-shadow: 0 20px 55px rgba(0,0,0,0.5);
+}
+
+.tgc-img-caption {
+  font-size: 0.60rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted,#5a5470);
+  text-align: center;
+  margin-top: 0.9rem;
+  opacity: 0.45;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .tgc-hero { padding: 3.5rem 1.5rem 3rem; }
+  .tgc-section { padding: 2.5rem 1.5rem; }
+  .tgc-img-wrap { padding: 0 1.5rem 2rem; }
+  .tgc-list li { padding: 0.6rem 0.8rem; font-size: 0.95rem; }
+}
+</style>
+
+<!-- ══ HERO ══ -->
+<div class="tgc-hero">
+  <div class="tgc-badges">
+    <span class="tgc-badge">3ème année</span>
+    <span class="tgc-badge">Projet de fin d'études</span>
+    <span class="tgc-badge">25h</span>
+    <span class="tgc-badge">Narrative Design</span>
+  </div>
+  <h1>The Good Company</h1>
+  <span class="tgc-hero-sub">Documentation de Narrative Design</span>
+  <a class="tgc-cta" href="https://docs.google.com/document/d/1zd0L2L5N55GS0D1RSGi3HajUxg8J3TSiZpCVa9QJH28/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
+    Voir la documentation →
+  </a>
+</div>
+
+<!-- ══ PITCH ══ -->
+<div class="tgc-section">
+  <p class="tgc-label">Pitch narratif</p>
+  <p>Imaginez que vous travailliez dans une entreprise mondiale des années 80. Vous travaillez en openspace mais vous êtes coincés. Vous avez l'impression que les jours vous échappent, ils se ressemblent tous au point où vous ne savez plus où vous êtes, ce que vous faites, pourquoi vous le faites, ni même quel jour on est.</p>
+  <p>Et bien bienvenue dans The Good Company.</p>
+  <p>Dans ce jeu de parcours à la première personne, le joueur, coincé dans une boucle temporelle, tente de s'échapper de son entreprise. L'espace est déformé, trop grand, comme un immense complexe aux dimensions intérieures incohérentes.</p>
+</div>
+
+<!-- ══ IMAGE 1 ══ -->
+<div class="tgc-img-wrap">
+  <img src="projects/the-good-company/images/img1.png" alt="The Good Company — aperçu" />
+  <p class="tgc-img-caption">Aperçu du jeu</p>
+</div>
+
+<div class="tgc-sep"></div>
+
+<!-- ══ APPROCHE ══ -->
+<div class="tgc-section">
+  <p class="tgc-label">Approche</p>
+
+  <h3>Contraintes de production</h3>
+  <p>Il existe de nombreuses manières d'aborder le narrative design, mais notre projet était soumis à plusieurs contraintes : une durée de production limitée, un effectif restreint, l'absence d'artistes, un genre de jeu orienté parcours, et une durée finale d'environ 15 minutes.</p>
+  <p>Ces paramètres, combinés à notre core gameplay, ont fortement orienté nos choix narratifs. L'objectif était de proposer une narration cohérente avec nos moyens de production, sans compromettre l'expérience.</p>
+
+  <h3>Intentions & structure narrative</h3>
+  <p>La première étape a consisté à définir le thème et le propos du jeu. Pour cela, je me suis appuyée sur l'analyse de nos verbes d'action et de notre core gameplay.</p>
+  <p>Le jeu étant un jeu de parcours, une question s'est rapidement posée : comment raconter quelque chose sans interrompre le flow ? Lorsqu'on joue à un jeu de parcours, on veut se déplacer, courir. Pas question de demander au joueur de s'arrêter pour lire de longs textes.</p>
+  <p>De plus, sur une durée de 15 minutes, un schéma narratif classique (exposition – développement – climax – résolution) semblait difficile à mettre en place. L'enjeu était double : respecter le rythme du gameplay tout en traitant de notre propos.</p>
+</div>
+
+<div class="tgc-sep"></div>
+
+<!-- ══ CHOIX NARRATIFS ══ -->
+<div class="tgc-section">
+  <p class="tgc-label">Choix narratifs</p>
+  <p>Après une phase d'analyse de divers jeux (jeux à boucle temporelle, jeux de parcours, roguelike…), j'ai choisi d'adapter la structure suivante :</p>
+  <ul class="tgc-list">
+    <li>Pas de scénario linéaire classique</li>
+    <li>Un objectif clair : s'enfuir</li>
+    <li>Une voix off intervenant lors des resets de la boucle (format GLaDOS dans Portal)</li>
+    <li>Une narration environnementale forte</li>
+    <li>Une fin douce-amère qui ouvre sur de nouveaux questionnements</li>
+  </ul>
+</div>
+
+<!-- ══ IMAGE 2 ══ -->
+<div class="tgc-img-wrap">
+  <img src="projects/the-good-company/images/img2.png" alt="The Good Company — documentation" />
+  <p class="tgc-img-caption">Extrait de la documentation</p>
+</div>
+
+<div class="tgc-sep"></div>
+
+<!-- ══ DOCUMENTATION ══ -->
+<div class="tgc-section">
+  <p class="tgc-label">Documentation</p>
+  <p>Le prochain défi pour moi était de rédiger la documentation de narrative design, ce que je n'avais encore jamais fait. Cela m'a poussée à me poser plusieurs questions : quel est le rôle de la documentation dans la production ? À qui s'adresse-t-elle ? Quelles informations doit-elle contenir ?</p>
+  <p>De cette réflexion est née une structure claire :</p>
+  <ul class="tgc-list">
+    <li>Une description du thème et du propos</li>
+    <li>Une présentation de l'univers</li>
+    <li>Un découpage des sous-axes narratifs</li>
+    <li>Les moyens de transmission associés à chacun (voix off, environnement, boucle, fin)</li>
+  </ul>
+  <p style="margin-top:1.4rem">La documentation devait permettre aux autres designers de prendre des décisions de design qui ne trahissaient pas la narration de notre jeu, et cela sans avoir nécessairement besoin de se référer à moi.</p>
+</div>
+
+</section>

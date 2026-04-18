@@ -1,0 +1,55 @@
+import type { Project } from "../types/Project";
+
+export const projects: Project[] = [
+  {
+  id: "game-writter",
+  title: " Le Game-Writter - Ecriture interactive",
+  description: "Projet de cours dans lequel nous devions réaliser une histoire interactive sur Twine, avec pour objectif d'apprendre à exploiter toutes les spécificités du support textuel afin de créer un core gameplay avec ce dernier. Nous étions limités à l'utilisation des fonctions basiques de Twine.",
+  techno: "Twine",
+  workTime: "17h",
+  date: "2ème année",
+  coverPath: "projects/game-writter/cover.gif",
+  isNarrative: true,
+  },
+
+  {
+  id: "the-good-company",
+  title: "The Good Company - Narrative Designer et Scénariste [Projet de fin d'étude]",
+  description: "Occupant le rôle de narrative designeuse et scénariste dans mon projet de fin d'études, j'ai rédigé la documentation de narrative design de notre jeu, dégagé son thème, son propos et ses sous-axes en accord avec notre gameplay.",
+  techno: "",
+  workTime: "25h",
+  date: "3ème année",
+  coverPath: "projects/the-good-company/cover.png",
+  isNarrative: true,
+  }, 
+  {
+  id: "voice-lines",
+  title: "Voice Lines The Good Companion [Projet de fin d'étude]",
+  description: "Dans le cadre de mon projet de fin d'étude, j'ai écrit l'intégralité des voice lines de The Good Companion, un personnage central de notre jeu.",
+  techno: "",
+  workTime: "10h",
+  date: "3ème année",
+  coverPath: "projects/voice-lines/cover.png",
+  isNarrative: true,
+  },
+  {
+  id: "penfall",
+  title: "Penfall (Game Jam) - Level / System Designer",
+  description: "Un projet de Game Jam sur deux jours dont le thème était « Gravité » et l'objet à implémenter « Stylo ». Pour ce projet j'ai collaboré avec un ingénieur en développement logiciel. Ce projet m’a permit de me familiariser avec le logiciel Godot.",
+  techno: "Godot",
+  workTime: "30h",
+  date: "3ème année",
+  coverPath: "projects/penfall/cover.gif",
+  isNarrative: false,
+  },
+  {
+  id: "dash-dungeon",
+  title: "DashDungeon - Level Designer ",
+  description: "Une collaboration apporté pour un projet d'étudiant en développement logiciel. J'y ai designé les Level en respectant les contraintes imposés.",
+  techno: "C++, Qt ",
+  workTime: "5h",
+  date: "2ème année",
+  coverPath: "projects/dash-dungeon/cover.gif",
+  isNarrative: false,
+  },
+];
