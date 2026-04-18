@@ -13,7 +13,9 @@ export function createProjectCard(project: Project, index: number): HTMLElement 
 
   item.innerHTML = `
     <div class="pli-main">
-      <span class="pli-number">${num}</span>
+      <div class="pli-left">
+        <span class="pli-number">${num}</span>
+      </div>
       <div class="pli-body">
         <h3 class="pli-title">${project.title}</h3>
         <p class="pli-desc">${project.description}</p>
@@ -23,6 +25,9 @@ export function createProjectCard(project: Project, index: number): HTMLElement 
         ${metaParts.map(m => `<span>${m}</span>`).join("")}
       </div>` : ""}
       <span class="pli-arrow">→</span>
+      <div class="pli-right">
+        <span class="pli-expand-hint" aria-hidden="true"></span>
+      </div>
     </div>
     <div class="pli-img">
       <img src="${project.coverPath}" alt="${project.title}" />

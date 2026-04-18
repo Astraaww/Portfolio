@@ -119,22 +119,39 @@ html {
 }
 
 /* Large muted number */
+.pli-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  min-width: 3.5rem;
+}
+
+.pli-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  min-width: 1.5rem;
+  align-self: stretch;
+  padding-bottom: 0.3rem;
+}
+
 .pli-number {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: 3.2rem;
   font-weight: 900;
   color: var(--moon-silver);
-  opacity: 0.10;
+  opacity: 0.22;
   line-height: 1;
-  min-width: 3.5rem;
   text-align: right;
-  flex-shrink: 0;
   transition: opacity 0.3s ease;
   user-select: none;
 }
 
 .project-list-item:hover .pli-number {
-  opacity: 0.35;
+  opacity: 0.55;
 }
 
 /* Title + description */
@@ -159,12 +176,9 @@ html {
 
 .pli-desc {
   font-size: 0.95rem;
-  color: var(--muted);
+  color: var(--text-secondary);
   line-height: 1.7;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  display: block;
   transition: color 0.3s ease;
 }
 
@@ -229,6 +243,28 @@ html {
 .project-list-item:hover .pli-arrow {
   opacity: 0.55;
   transform: translateX(0);
+}
+
+/* Expand hint arrow */
+.pli-expand-hint {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-right: 1.5px solid var(--primary);
+  border-bottom: 1.5px solid var(--primary);
+  animation: expandBounce 2s ease-in-out infinite;
+  opacity: 0.6;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.project-list-item:hover .pli-expand-hint {
+  opacity: 0;
+}
+
+@keyframes expandBounce {
+  0%, 100% { transform: translateY(0)   rotate(45deg); opacity: 0.6; }
+  50%       { transform: translateY(4px) rotate(45deg); opacity: 1; }
 }
 
 /* ===================== HERO ===================== */
@@ -493,8 +529,8 @@ html {
 .scroll-arrow {
   width: 14px;
   height: 14px;
-  border-right: 1px solid var(--muted);
-  border-bottom: 1px solid var(--muted);
+  border-right: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primary);
   transform: rotate(45deg);
   animation: bounce 2s ease-in-out infinite;
 }
@@ -663,10 +699,21 @@ html {
   }
 
   .pli-img {
-    display: none;
+    display: flex;
+    max-height: 300px;
+    padding: 0 0.5rem 1rem;
+  }
+
+  .pli-img img {
+    max-width: 90%;
+    max-height: 260px;
   }
 
   .pli-arrow {
+    display: none;
+  }
+
+  .pli-expand-hint {
     display: none;
   }
 }

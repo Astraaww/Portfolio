@@ -15,7 +15,7 @@ export function createFooter(): HTMLElement {
           <span>LinkedIn</span>
         </a>
 
-        <a href="/assets/CV_Christy_Armandou.pdf" target="_blank">
+        <a href="/assets/cv_christy_armandou.pdf" target="_blank">
           <svg viewBox="0 0 24 24">
             <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5"/>
           </svg>
