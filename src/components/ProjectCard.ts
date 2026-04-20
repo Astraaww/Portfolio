@@ -35,7 +35,7 @@ export function createProjectCard(project: Project, index: number): HTMLElement 
   `;
 
   item.addEventListener("click", () => {
-    window.location.href = `/project.html?id=${project.id}`;
+    window.location.href = `${window.location.origin}/project.html?id=${project.id}`;
   });
 
   return item;

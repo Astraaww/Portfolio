@@ -250,8 +250,8 @@ html {
   display: block;
   width: 10px;
   height: 10px;
-  border-right: 1.5px solid var(--primary);
-  border-bottom: 1.5px solid var(--primary);
+  border-right: 1.5px solid var(--moon-silver);
+  border-bottom: 1.5px solid var(--moon-silver);
   animation: expandBounce 2s ease-in-out infinite;
   opacity: 0.6;
   pointer-events: none;
@@ -529,8 +529,8 @@ html {
 .scroll-arrow {
   width: 14px;
   height: 14px;
-  border-right: 1px solid var(--primary);
-  border-bottom: 1px solid var(--primary);
+  border-right: 1px solid var(--moon-silver);
+  border-bottom: 1px solid var(--moon-silver);
   transform: rotate(45deg);
   animation: bounce 2s ease-in-out infinite;
 }
